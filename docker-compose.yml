@@ -1,0 +1,31 @@
+version: "3.4"
+# Data volume for Mongo
+volumes:
+ mongostorage:
+
+services:
+
+  mongo:
+    build:
+      context: ./mongo
+      dockerfile: mongo.dockerfile
+    image: mongo:final
+    volumes:
+      - mongostorage:/data/db
+    env_file: 
+      - ./.env
+    ports:
+      - "27017:27017"
+
+  restapi:
+    depends_on:
+      - mongo
+    build: 
+      context: .
+      dockerfile: restapi.dockerfile
+    image: restapi:final
+    env_file: 
+      - ./.env
+    ports:
+      - "3000:3000"
+    

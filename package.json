@@ -1,5 +1,5 @@
 {
-  "name": "express-api-demo",
+  "name": "UserManager",
   "version": "1.0.0",
   "description": "A demo using express JS to build an API.",
   "main": "server.js",
@@ -13,7 +13,7 @@
     "demo",
     "api"
   ],
-  "author": "Bolaji Olajide 'Nuel",
+  "author": "Amakiri Joseph Lucky",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.17.1",
